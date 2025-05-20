@@ -63,7 +63,7 @@ def load_dict(files):
 if uploaded_file:
     ext = uploaded_file.name.split('.')[-1]
     st.session_state.df = pd.read_csv(uploaded_file) if ext == "csv" else pd.read_excel(uploaded_file)
-    df = st.session_state
+    df = st.session_state.df
     st.success("✅ File uploaded successfully!")
     st.dataframe(df.head())
 
